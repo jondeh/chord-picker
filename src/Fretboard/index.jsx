@@ -55,7 +55,7 @@ const Fretboard = ({ myNotes, setMyNotes, handleOffClick }) => {
 
   return (
     <div className='fretboard' onClick={e => e.stopPropagation()}>
-      <OpenStrings addNote={addNote} myNotes={myNotes} />
+      {/* <OpenStrings addNote={addNote} myNotes={myNotes} /> */}
       <FretboardBody addNote={addNote} myNotes={myNotes} />
     </div>
   )
@@ -85,7 +85,17 @@ const FretboardBody = ({ myNotes, addNote }) => {
     <div className='fretboard-body'>
       <div className='display-strings'>
         {[...Array(7)].map((_, i) => (
-          <div key={i} className='display-string' />
+          <div
+            key={i}
+            className={`display-string ${
+              myNotes[i - 1] == 0
+                ? 'open'
+                : myNotes[i - 1] === 'X'
+                ? 'mute'
+                : ''
+            }`}
+            onClick={e => addNote(e, i - 1, myNotes[i - 1] === 0 ? 'X' : 0)}
+          />
         ))}
       </div>
       <div className='display-frets'>

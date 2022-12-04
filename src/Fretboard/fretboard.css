@@ -1,10 +1,13 @@
 .fretboard {
-  height: 900px;
-  width: 420px;
+  height: 100%;
+  max-height: 100%;
+  /* width: 100%; */
+  aspect-ratio: 1 / 1.5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 18px;
+  justify-content: flex-end;
+  padding: 25px;
   box-sizing: border-box;
 }
 
@@ -12,7 +15,7 @@
   background: url('https://raw.githubusercontent.com/jondeh/no-db/master/src/dark-wood.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 75%;
+  height: calc(100% - 50px);
   width: 80%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -95,14 +98,11 @@
 
 .open-strings-container {
   height: 40px;
-  margin-right: 0px;
   display: grid;
   grid-template-columns: repeat(6, 1fr [open-strings]);
   width: 75%;
-  /* margin-bottom: 150px; */
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   grid-column-gap: 5px;
-  z-index: 1000;
 }
 
 .open-strings {
@@ -110,12 +110,14 @@
   padding-top: 6px;
   font-weight: 700px;
   /* background: url('./silver2.jpeg'); */
-  background: black;
+  background: goldenrod;
   box-shadow: 0 3px 3px 3px black;
+  display: grid;
+  place-content: center;
 }
 
 .open-strings:hover {
-  transform: translateY(-2px);
+  box-shadow: 0 3px 3px 3px white;
 }
 
 .circles-container {
@@ -147,27 +149,60 @@
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
 }
 
+.display-string::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%);
+  height: 45px;
+  width: 45px;
+  background: rgba(0, 0, 0, 0.144);
+  border-radius: 50px;
+  font-weight: bold;
+  color: black;
+}
+
+.display-string.open::before {
+  background: transparent;
+  border: 5px solid var(--selected-note);
+  box-sizing: border-box;
+}
+
+.display-string.mute::before {
+  content: 'X';
+  background: transparent;
+  border: none;
+  display: grid;
+  place-content: center;
+  font-size: 40px;
+}
+
+.display-string:first-child::before {
+  content: '';
+  display: none;
+}
+
 .display-string {
   z-index: 25;
 }
 
 .display-string:nth-child(1) {
-  border-right: 6px groove goldenrod;
+  border-right: 7px groove goldenrod;
 }
 .display-string:nth-child(2) {
-  border-right: 5px groove goldenrod;
+  border-right: 6px groove goldenrod;
 }
 .display-string:nth-child(3) {
-  border-right: 4px groove goldenrod;
+  border-right: 5px groove goldenrod;
 }
 .display-string:nth-child(4) {
-  border-right: 3.2px groove goldenrod;
+  border-right: 4px groove goldenrod;
 }
 .display-string:nth-child(5) {
-  border-right: 2.5px groove goldenrod;
+  border-right: 3px groove goldenrod;
 }
 .display-string:nth-child(6) {
-  border-right: 1.5px groove goldenrod;
+  border-right: 2px groove goldenrod;
 }
 
 .display-frets {
@@ -194,7 +229,7 @@
   border-radius: 100px;
   box-shadow: inset 0 0 10px 3px white;
   z-index: 100;
-  background: lightgreen;
+  background: var(--selected-note);
 }
 
 .note:active {

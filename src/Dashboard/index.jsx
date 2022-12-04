@@ -70,8 +70,6 @@ const Dashboard = ({
     chordSelected &&
     chordSelected.chord?.strings?.join('') !== myNotes?.join('')
 
-  console.log('chordSelected: ', chordSelected)
-  console.log('myNotes: ', myNotes)
   return (
     <div className='dashboard'>
       <div>

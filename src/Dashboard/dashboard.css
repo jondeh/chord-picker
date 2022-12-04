@@ -31,6 +31,10 @@
 .submit-button[disabled] {
   color: grey;
 }
+.submit-button[disabled]:hover {
+  outline: none;
+  border: 1px solid transparent;
+}
 
 .submit-button {
   transition-duration: color 0.25s;
@@ -46,11 +50,12 @@
   justify-content: center;
   align-items: center;
   /* width: 100%; */
+  grid-gap: 10px;
 }
 
 .chord {
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
   line-height: 5;
   box-shadow: 0 0 3px 0 white;
   border-radius: 5px;
@@ -89,6 +94,7 @@
   align-items: center;
   border: 1px solid black;
   position: relative;
+  border-right: none;
 }
 
 .unplayed::before {
@@ -106,9 +112,11 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
   height: 25px;
   position: relative;
-  width: 50px;
+  width: 100%;
 }
 
 .chord-chart-fret:first-child {
@@ -116,7 +124,7 @@
 }
 
 .chord-chart-fret:last-child {
-  border-left: none;
+  border-right: 2px solid black;
 }
 
 .chord-chart-note {
