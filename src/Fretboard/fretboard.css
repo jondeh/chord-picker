@@ -21,7 +21,7 @@
   grid-template-columns: repeat(6, 1fr);
   margin-right: 0px;
   position: relative;
-  box-shadow: 4px 2px 5px 2px black;
+  box-shadow: 0px 0px 15px 2px black;
   box-sizing: border-box;
 }
 
@@ -111,7 +111,7 @@
   font-weight: 700px;
   /* background: url('./silver2.jpeg'); */
   background: goldenrod;
-  box-shadow: 0 3px 3px 3px black;
+  box-shadow: var(--selected-note-shadow);
   display: grid;
   place-content: center;
 }
@@ -164,8 +164,9 @@
 
 .display-string.open::before {
   background: transparent;
-  border: 5px solid var(--selected-note);
+  border: 5px solid var(--selected-note-color);
   box-sizing: border-box;
+  box-shadow: var(--selected-note-shadow);
 }
 
 .display-string.mute::before {
@@ -187,22 +188,22 @@
 }
 
 .display-string:nth-child(1) {
-  border-right: 7px groove goldenrod;
+  border-right: 7px groove var(--guitar-string);
 }
 .display-string:nth-child(2) {
-  border-right: 6px groove goldenrod;
+  border-right: 6px groove var(--guitar-string);
 }
 .display-string:nth-child(3) {
-  border-right: 5px groove goldenrod;
+  border-right: 5px groove var(--guitar-string);
 }
 .display-string:nth-child(4) {
-  border-right: 4px groove goldenrod;
+  border-right: 4px groove var(--guitar-string);
 }
 .display-string:nth-child(5) {
-  border-right: 3px groove goldenrod;
+  border-right: 3px groove var(--guitar-string);
 }
 .display-string:nth-child(6) {
-  border-right: 2px groove goldenrod;
+  border-right: 2px groove var(--guitar-string);
 }
 
 .display-frets {
@@ -227,9 +228,14 @@
 
 .note-selected {
   border-radius: 100px;
-  box-shadow: inset 0 0 10px 3px white;
+  box-shadow: inset 0 0 10px 0 white;
   z-index: 100;
-  background: var(--selected-note);
+  background: var(--selected-note-color);
+
+  height: 85%;
+  width: 85%;
+  place-self: center;
+  box-shadow: var(--selected-note-shadow);
 }
 
 .note:active {
@@ -242,18 +248,25 @@
 
 .noteName {
   visibility: hidden;
-  background-color: rgb(144, 174, 238);
+  /* background-color: var(--string-hover); */
+  /* background-color: var(--selected-note-color); */
+  border: 4px solid var(--selected-note-color);
   color: white;
   font-size: 17px;
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
-  font-size: 25px;
-  height: 100%;
-  width: 100%;
+  font-size: 38px;
+  font-weight: bold;
+  height: 85%;
+  width: 85%;
+  place-self: center;
   border-radius: 100px;
   display: grid;
   place-content: center;
-  box-shadow: inset 0 0 10px 2px darkblue;
+  /* box-shadow: 0 0 10px 2px lightgreen; */
 }
 
 .note:hover .noteName {

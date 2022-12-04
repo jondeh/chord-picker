@@ -20,7 +20,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --selected-note: lightgreen;
+  --selected-note-color: lightgreen;
+  --selected-note-shadow: 0 0 10px 0px white;
+  --guitar-string: goldenrod;
+  --string-hover: rgb(144, 174, 238);
 }
 a {
   font-weight: 500;
