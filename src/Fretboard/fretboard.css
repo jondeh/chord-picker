@@ -96,30 +96,6 @@
   box-sizing: border-box;
 }
 
-.open-strings-container {
-  height: 40px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr [open-strings]);
-  width: 75%;
-  margin-bottom: 15px;
-  grid-column-gap: 5px;
-}
-
-.open-strings {
-  border-radius: 250px;
-  padding-top: 6px;
-  font-weight: 700px;
-  /* background: url('./silver2.jpeg'); */
-  background: goldenrod;
-  box-shadow: var(--selected-note-shadow);
-  display: grid;
-  place-content: center;
-}
-
-.open-strings:hover {
-  box-shadow: 0 3px 3px 3px white;
-}
-
 .circles-container {
   position: absolute;
   height: 100%;
@@ -149,6 +125,11 @@
   grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
 }
 
+.display-string {
+  position: relative;
+  z-index: 25;
+}
+
 .display-string::before {
   content: '';
   position: absolute;
@@ -160,22 +141,36 @@
   border-radius: 50px;
   font-weight: bold;
   color: black;
+  display: grid;
+  place-content: center;
+  font-size: 40px;
+  box-sizing: border-box;
 }
 
 .display-string.open::before {
   background: transparent;
   border: 5px solid var(--selected-note-color);
-  box-sizing: border-box;
   box-shadow: var(--selected-note-shadow);
+}
+.display-string.open:hover::before {
+  border-color: lightcoral;
 }
 
 .display-string.mute::before {
   content: 'X';
   background: transparent;
   border: none;
-  display: grid;
-  place-content: center;
-  font-size: 40px;
+}
+
+.display-string:hover {
+  border-left-color: lightcoral !important;
+  /* border-left-style: dashed !important; */
+}
+.mute:hover {
+  border-color: var(--selected-note-color) !important;
+}
+.mute:hover::before {
+  box-shadow: 0 0 4px 0.2rem var(--selected-note-color) !important;
 }
 
 .display-string:first-child::before {
@@ -183,27 +178,23 @@
   display: none;
 }
 
-.display-string {
-  z-index: 25;
-}
-
-.display-string:nth-child(1) {
-  border-right: 7px groove var(--guitar-string);
-}
 .display-string:nth-child(2) {
-  border-right: 6px groove var(--guitar-string);
+  border-left: 7px groove var(--guitar-string);
 }
 .display-string:nth-child(3) {
-  border-right: 5px groove var(--guitar-string);
+  border-left: 6px groove var(--guitar-string);
 }
 .display-string:nth-child(4) {
-  border-right: 4px groove var(--guitar-string);
+  border-left: 5px groove var(--guitar-string);
 }
 .display-string:nth-child(5) {
-  border-right: 3px groove var(--guitar-string);
+  border-left: 4px groove var(--guitar-string);
 }
 .display-string:nth-child(6) {
-  border-right: 2px groove var(--guitar-string);
+  border-left: 3px groove var(--guitar-string);
+}
+.display-string:nth-child(7) {
+  border-left: 2px groove var(--guitar-string);
 }
 
 .display-frets {
