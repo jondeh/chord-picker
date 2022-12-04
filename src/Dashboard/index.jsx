@@ -28,6 +28,7 @@ const Dashboard = ({
   chordSelected,
   setMyNotes,
   myNotes,
+  deleteChord,
   handleOffClick
 }) => {
   const [showCharts, setShowCharts] = React.useState(true)
@@ -50,12 +51,21 @@ const Dashboard = ({
         onClick={e => handleClick(e, chordIndex, formattedChord)}
       >
         <h5>{formattedChord.chordName}</h5>
+        {chordSelected.index === chordIndex && (
+          <button
+            onClick={() => deleteChord(chordIndex)}
+            className='delete-chord'
+          >
+            ⌫
+          </button>
+        )}
         {showCharts && <ChordChart chord={formattedChord} />}
         {/* <span>{formattedChord.fingering}</span> */}
       </div>
     )
   })
 
+  const disabled = myNotes.join('') === 'XXXXXX' || loadingChord
   const toUpdate =
     chordSelected &&
     chordSelected.chord?.strings?.join('') !== myNotes?.join('')
@@ -72,7 +82,7 @@ const Dashboard = ({
           {showSettings && <Settings setShowCharts={setShowCharts} />}
         </header>
         <div className='chord-grid'>
-          {renderChords}{' '}
+          {renderChords}
           {loadingChord && (
             <div className='chord skeleton'>
               <h5>Loading</h5>
@@ -82,7 +92,8 @@ const Dashboard = ({
         </div>
       </div>
       <button
-        disabled={loadingChord}
+        className='submit-button'
+        disabled={disabled}
         onClick={toUpdate ? updateChord : addChord}
       >
         {toUpdate ? 'Update Chord' : 'Add Chord'}

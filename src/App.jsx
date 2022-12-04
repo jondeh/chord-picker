@@ -31,8 +31,8 @@ function App () {
     fetch(`https://api.uberchord.com/v1/chords?voicing=${joinChords}`)
       .then(res => res.json())
       .then(res => {
-        const updatedChords = myChords.map(chord => {
-          if (chord.index === chordSelected.index) {
+        const updatedChords = myChords.map((chord, chordIndex) => {
+          if (chordIndex === chordSelected.index) {
             return res[0]
           } else {
             return chord
@@ -44,6 +44,13 @@ function App () {
         setLoadingChord(false)
       })
       .catch(err => console.log(err))
+  }
+
+  const deleteChord = i => {
+    const updatedChords = myChords.filter((_, index) => index !== i)
+    setMyChords(updatedChords)
+    setMyNotes(['X', 'X', 'X', 'X', 'X', 'X'])
+    setChordSelected(false)
   }
 
   const handleOffClick = () => {
@@ -68,6 +75,7 @@ function App () {
         myChords={myChords}
         addChord={addChord}
         updateChord={updateChord}
+        deleteChord={deleteChord}
         loadingChord={loadingChord}
       />
     </div>
