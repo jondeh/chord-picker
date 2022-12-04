@@ -1,0 +1,226 @@
+.fretboard {
+  height: 900px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 18px;
+  box-sizing: border-box;
+}
+
+.fretboard-body {
+  background: url('https://raw.githubusercontent.com/jondeh/no-db/master/src/dark-wood.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 75%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-right: 0px;
+  position: relative;
+  box-shadow: 4px 2px 5px 2px black;
+  box-sizing: border-box;
+}
+
+.fretboard-body2 {
+  /* background: url('./dark-wood.jpg'); */
+  /* border: 2px solid black; */
+  height: 75%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr [strings]);
+  margin-right: 0px;
+  position: relative;
+  box-shadow: 4px 2px 5px 2px black;
+  box-sizing: border-box;
+}
+
+.fretboard-body3 {
+  /* background: url('./interesting-wood.jpg'); */
+  /* border: 2px solid black; */
+  height: 75%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr [strings]);
+  margin-right: 0px;
+  position: relative;
+  box-shadow: 4px 2px 5px 2px black;
+  box-sizing: border-box;
+}
+
+.fretboard-bodyRyan {
+  /* background: url('./IMG959258[1].jpg'); */
+  background-position: center;
+  background-size: 220%;
+  /* border: 2px solid black; */
+  height: 75%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr [strings]);
+  margin-right: 0px;
+  position: relative;
+  box-shadow: 4px 2px 5px 2px black;
+  box-sizing: border-box;
+}
+
+.fretboard-bodyUnicorn {
+  /* background: url('./unicorn.jpg'); */
+  background-position: 63%;
+  background-size: 490%;
+  /* border: 2px solid black; */
+  height: 75%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr [strings]);
+  margin-right: 0px;
+  position: relative;
+  box-shadow: 4px 2px 5px 2px black;
+  box-sizing: border-box;
+}
+
+.fretboard-bodyPerez {
+  /* background: url('./IMG_1509.JPG'); */
+  background-position: 50%;
+  background-size: 255%;
+  /* border: 2px solid black; */
+  height: 75%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr [strings]);
+  margin-right: 0px;
+  position: relative;
+  box-shadow: 4px 2px 5px 2px black;
+  box-sizing: border-box;
+}
+
+.open-strings-container {
+  height: 40px;
+  margin-right: 0px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr [open-strings]);
+  width: 75%;
+  /* margin-bottom: 150px; */
+  margin-bottom: 10px;
+  grid-column-gap: 5px;
+  z-index: 1000;
+}
+
+.open-strings {
+  border-radius: 250px;
+  padding-top: 6px;
+  font-weight: 700px;
+  /* background: url('./silver2.jpeg'); */
+  background: black;
+  box-shadow: 0 3px 3px 3px black;
+}
+
+.open-strings:hover {
+  transform: translateY(-2px);
+}
+
+.circles-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  padding: 49px 4px 49px 0;
+}
+
+.circle {
+  height: 27px;
+  width: 27px;
+  border-radius: 100px;
+  z-index: 15;
+  /* background: url('./silver2.jpeg'); */
+  background: grey;
+}
+
+.display-strings {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+}
+
+.display-string {
+  z-index: 25;
+}
+
+.display-string:nth-child(1) {
+  border-right: 6px groove goldenrod;
+}
+.display-string:nth-child(2) {
+  border-right: 5px groove goldenrod;
+}
+.display-string:nth-child(3) {
+  border-right: 4px groove goldenrod;
+}
+.display-string:nth-child(4) {
+  border-right: 3.2px groove goldenrod;
+}
+.display-string:nth-child(5) {
+  border-right: 2.5px groove goldenrod;
+}
+.display-string:nth-child(6) {
+  border-right: 1.5px groove goldenrod;
+}
+
+.display-frets {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+}
+
+.display-fret {
+  border: 2px groove rgb(170, 164, 164);
+  border-right: none;
+  border-left: none;
+}
+
+.note {
+  /* transition-duration: 0.2s; */
+  z-index: 50;
+  position: relative;
+}
+
+.note-selected {
+  border-radius: 100px;
+  box-shadow: inset 0 0 10px 3px white;
+  z-index: 100;
+  background: lightgreen;
+}
+
+.note:active {
+  transform: translateY(2px);
+}
+
+.string {
+  display: grid;
+}
+
+.noteName {
+  visibility: hidden;
+  background-color: rgb(144, 174, 238);
+  color: white;
+  font-size: 17px;
+  position: absolute;
+  z-index: 1;
+  font-size: 25px;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  display: grid;
+  place-content: center;
+  box-shadow: inset 0 0 10px 2px darkblue;
+}
+
+.note:hover .noteName {
+  visibility: visible;
+}
