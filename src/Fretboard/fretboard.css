@@ -153,7 +153,7 @@
   box-shadow: var(--selected-note-shadow);
 }
 .display-string.open:hover::before {
-  border-color: lightcoral;
+  border: none;
 }
 
 .display-string.mute::before {
@@ -162,9 +162,12 @@
   border: none;
 }
 
+.display-string:hover::before {
+  box-shadow: 0 0 10px 2px lightcoral;
+}
+
 .display-string:hover {
   border-left-color: lightcoral !important;
-  /* border-left-style: dashed !important; */
 }
 .mute:hover {
   border-color: var(--selected-note-color) !important;
