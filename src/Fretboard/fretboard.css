@@ -11,6 +11,15 @@
   box-sizing: border-box;
 }
 
+.fretboard button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
 .fretboard-body {
   background: url('https://raw.githubusercontent.com/jondeh/no-db/master/src/dark-wood.jpg');
   background-size: cover;
@@ -128,6 +137,15 @@
 .display-string {
   position: relative;
   z-index: 25;
+}
+
+.display-string:focus {
+  outline: none;
+}
+
+.display-string:focus::before,
+.display-string:focus-visible::before {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
 .display-string::before {

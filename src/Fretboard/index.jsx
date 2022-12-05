@@ -85,7 +85,7 @@ const FretboardBody = ({ myNotes, addNote }) => {
     <div className='fretboard-body'>
       <div className='display-strings'>
         {[...Array(7)].map((_, i) => (
-          <div
+          <button
             key={i}
             className={`display-string ${
               myNotes[i - 1] == 0
@@ -112,7 +112,7 @@ const FretboardBody = ({ myNotes, addNote }) => {
         return (
           <div className='string' key={strInd}>
             {string.map((fret, fretInd) => (
-              <div
+              <button
                 className={`note ${myNotes[strInd] == fretInd + 1 &&
                   'note-selected'}`}
                 key={fretInd + 1}
@@ -121,7 +121,7 @@ const FretboardBody = ({ myNotes, addNote }) => {
                 <div className='noteName'>
                   <span>{fret}</span>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         )
