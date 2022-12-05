@@ -215,21 +215,31 @@
 }
 
 .note {
-  /* transition-duration: 0.2s; */
   z-index: 50;
   position: relative;
 }
 
 .note-selected {
+  height: 100%;
+  width: 100%;
+  place-self: center;
+  display: grid;
+  place-content: center;
+  position: relative;
+  z-index: 100;
+}
+.note-selected::after {
+  content: '';
   border-radius: 100px;
   box-shadow: inset 0 0 10px 0 white;
-  z-index: 100;
+  box-shadow: var(--selected-note-shadow);
   background: var(--selected-note-color);
-
   height: 85%;
   width: 85%;
-  place-self: center;
-  box-shadow: var(--selected-note-shadow);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .note:active {
