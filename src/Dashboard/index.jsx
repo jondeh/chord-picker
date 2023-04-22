@@ -31,7 +31,7 @@ const Dashboard = ({
   deleteChord,
   handleOffClick
 }) => {
-  const [showCharts, setShowCharts] = React.useState(true)
+  const [showCharts, setShowCharts] = React.useState(false)
   const [showSettings, setShowSettings] = React.useState(false)
 
   const handleClick = (e, i, chord) => {
@@ -50,13 +50,13 @@ const Dashboard = ({
         }`}
         onClick={e => handleClick(e, chordIndex, formattedChord)}
       >
-        <h5>{formattedChord.chordName}</h5>
+        <h5 className="chord-title">{formattedChord.chordName}</h5>
         {chordSelected.index === chordIndex && (
           <button
             onClick={() => deleteChord(chordIndex)}
             className='delete-chord'
           >
-            ⌫
+            🞬
           </button>
         )}
         {showCharts && <ChordChart chord={formattedChord} />}
@@ -75,9 +75,9 @@ const Dashboard = ({
       <div>
         <header>
           <div />
-          <h4>Dashboard</h4>
+          <h4>My Chords</h4>
           <button onClick={() => setShowSettings(!showSettings)}>⛭</button>
-          {showSettings && <Settings setShowCharts={setShowCharts} />}
+          {showSettings && <Settings showCharts={showCharts} setShowCharts={setShowCharts} />}
         </header>
         <div className='chord-grid'>
           {renderChords}
@@ -155,12 +155,13 @@ const ChordChart = ({ chord }) => {
   return <div className='chord-chart'>{chart}</div>
 }
 
-const Settings = ({ setShowCharts }) => {
+const Settings = ({ showCharts, setShowCharts }) => {
+  console.log("showCharts", showCharts)
   return (
     <div className='dashboard-settings'>
       <label>
         Show Charts
-        <input type='checkbox' onChange={() => setShowCharts(s => !s)} />
+        <input value={showCharts} type='checkbox' onChange={() => setShowCharts(s => !s)} />
       </label>
     </div>
   )

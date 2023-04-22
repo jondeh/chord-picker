@@ -17,12 +17,17 @@
 }
 
 .dashboard header {
+  color: #f7f7f7;
   padding: 15px;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
+
+.dashboard h4 {
+  color: #f7f7f7;
 }
 
 .dashboard header button {
@@ -35,7 +40,7 @@
   width: 60px;
   display: grid;
   place-content: center;
-  color: white;
+  color: #f7f7f7;
 }
 
 .submit-button[disabled] {
@@ -49,7 +54,7 @@
 
 .submit-button {
   transition-duration: color 0.25s;
-  color: green;
+  color: #B6CCA1;
   max-width: 250px;
   align-self: center;
   margin-top: 10px;
@@ -68,17 +73,24 @@
 }
 
 .chord {
+  padding: 30px;
+  background: #f7f7f7;
+  color: #111111;
   height: 100%;
   /* width: 100%; */
   line-height: 5;
-  box-shadow: 0 0 3px 0 white;
+  box-shadow: 0 0 3px 0 #f7f7f7;
   border-radius: 5px;
   position: relative;
 }
 
+.chord:hover {
+  cursor: pointer;
+}
+
 .chord.active {
-  background: #646cff;
-  color: white;
+  background: #A5D8FF;
+  color: #f7f7f7;
 }
 
 .chord h5 {
@@ -97,9 +109,15 @@
   background: grey;
 }
 
+.chord-title {
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #242424;
+}
+
 .chord-chart {
   padding: 20px 10px 20px 30px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .chord-chart-string {
@@ -168,15 +186,16 @@
 }
 
 .dashboard-settings {
+  color: #111111;
   z-index: 100;
   position: absolute;
   right: 50px;
   top: 100%;
-  background: grey;
+  background: #f7f7f7;
   width: 300px;
   /* height: 200px; */
   border-radius: 5px;
-  /* box-shadow: 0 0px 5px 0px white, inset 0 0px 5px 0px white; */
+  box-shadow: 0 0px 5px 0px #111111;
   padding: 10px 20px;
 }
 
@@ -185,4 +204,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
+
+.dashboard-settings input {
+  cursor: pointer;
+}
+
+

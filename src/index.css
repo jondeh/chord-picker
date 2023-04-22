@@ -21,7 +21,7 @@
   -webkit-text-size-adjust: 100%;
 
   --selected-note-color: lightgreen;
-  --selected-note-shadow: 0 0 8px 0px white;
+  --selected-note-shadow: 0 0 8px 0px #f7f7f7;
   --guitar-string: goldenrod;
   --string-hover: rgb(144, 174, 238);
 }
@@ -58,7 +58,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #D7FCD4;
 }
 button:focus,
 button:focus-visible {
