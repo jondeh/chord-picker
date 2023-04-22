@@ -316,6 +316,12 @@
   /* box-shadow: 0 0 10px 2px lightgreen; */
 }
 
+.noteName span {
+  color: #f7f7f7;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
 .note:hover .noteName {
   visibility: visible;
 }
