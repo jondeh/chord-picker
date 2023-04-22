@@ -20,6 +20,8 @@
   margin: 0;
 }
 
+
+
 .fretboard-body {
   background: url('https://raw.githubusercontent.com/jondeh/no-db/master/src/dark-wood.jpg');
   background-size: cover;
@@ -30,33 +32,57 @@
   grid-template-columns: repeat(6, 1fr);
   margin-right: 0px;
   position: relative;
-  box-shadow: 0px 0px 15px 2px black;
+  box-shadow: 0px 0px 15px 2px #111111;
   box-sizing: border-box;
+}
+
+@media (max-width: 1300px) {
+  .fretboard {
+    padding: 16px;
+    height: 90vh;
+  }
+
+  .fretboard-body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .fretboard {
+    padding: 16px;
+    aspect-ratio: initial;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .fretboard-body {
+    width: 100%;
+  }
 }
 
 .fretboard-body2 {
   /* background: url('./dark-wood.jpg'); */
-  /* border: 2px solid black; */
+  /* border: 2px solid #111111; */
   height: 75%;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(6, 1fr [strings]);
   margin-right: 0px;
   position: relative;
-  box-shadow: 4px 2px 5px 2px black;
+  box-shadow: 4px 2px 5px 2px #111111;
   box-sizing: border-box;
 }
 
 .fretboard-body3 {
   /* background: url('./interesting-wood.jpg'); */
-  /* border: 2px solid black; */
+  /* border: 2px solid #111111; */
   height: 75%;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(6, 1fr [strings]);
   margin-right: 0px;
   position: relative;
-  box-shadow: 4px 2px 5px 2px black;
+  box-shadow: 4px 2px 5px 2px #111111;
   box-sizing: border-box;
 }
 
@@ -64,14 +90,13 @@
   /* background: url('./IMG959258[1].jpg'); */
   background-position: center;
   background-size: 220%;
-  /* border: 2px solid black; */
   height: 75%;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(6, 1fr [strings]);
   margin-right: 0px;
   position: relative;
-  box-shadow: 4px 2px 5px 2px black;
+  box-shadow: 4px 2px 5px 2px #111111;
   box-sizing: border-box;
 }
 
@@ -79,14 +104,14 @@
   /* background: url('./unicorn.jpg'); */
   background-position: 63%;
   background-size: 490%;
-  /* border: 2px solid black; */
+  /* border: 2px solid #111111; */
   height: 75%;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(6, 1fr [strings]);
   margin-right: 0px;
   position: relative;
-  box-shadow: 4px 2px 5px 2px black;
+  box-shadow: 4px 2px 5px 2px #111111;
   box-sizing: border-box;
 }
 
@@ -94,14 +119,14 @@
   /* background: url('./IMG_1509.JPG'); */
   background-position: 50%;
   background-size: 255%;
-  /* border: 2px solid black; */
+  /* border: 2px solid #111111; */
   height: 75%;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(6, 1fr [strings]);
   margin-right: 0px;
   position: relative;
-  box-shadow: 4px 2px 5px 2px black;
+  box-shadow: 4px 2px 5px 2px #111111;
   box-sizing: border-box;
 }
 
@@ -158,7 +183,7 @@
   background: rgba(0, 0, 0, 0.144);
   border-radius: 50px;
   font-weight: bold;
-  color: black;
+  color: #111111;
   display: grid;
   place-content: center;
   font-size: 40px;

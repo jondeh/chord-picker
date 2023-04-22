@@ -3,7 +3,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 3px 10px 0px black;
+  box-shadow: 0 3px 10px 0px #111111;
+  background: #242424;
+  padding: 12px;
+}
+
+@media (max-width: 1300px) {
+  .dashboard {
+    height: max-content;
+    width: 100%;
+    flex-direction: column-reverse;
+  }
 }
 
 .dashboard header {
@@ -30,6 +40,7 @@
 
 .submit-button[disabled] {
   color: grey;
+  cursor: not-allowed;
 }
 .submit-button[disabled]:hover {
   outline: none;
@@ -39,6 +50,9 @@
 .submit-button {
   transition-duration: color 0.25s;
   color: green;
+  max-width: 250px;
+  align-self: center;
+  margin-top: 10px;
 }
 
 .chord-grid {
@@ -92,7 +106,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #111111;
   position: relative;
   border-right: none;
 }
@@ -111,7 +125,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #111111;
   border-top: none;
   border-bottom: none;
   height: 25px;
@@ -120,11 +134,11 @@
 }
 
 .chord-chart-fret:first-child {
-  border-left: 5px solid black;
+  border-left: 5px solid #111111;
 }
 
 .chord-chart-fret:last-child {
-  border-right: 2px solid black;
+  border-right: 2px solid #111111;
 }
 
 .chord-chart-note {
@@ -136,7 +150,7 @@
   height: 20px;
   width: 20px;
   position: absolute;
-  background: black;
+  background: #111111;
   border-radius: 100%;
   top: -50%;
   left: -75%;
@@ -147,7 +161,7 @@
   height: 25px;
   width: 25px;
   position: absolute;
-  background: black;
+  background: #111111;
   border-radius: 100%;
   top: -50%;
   left: -75%;
